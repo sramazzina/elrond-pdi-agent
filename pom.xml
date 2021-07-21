@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.serasoft.elrond</groupId>
+    <artifactId>elrond</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Elrond Pentaho Data Integration Agent</name>
+    <description>Maven POM for the Elrond Pentaho Data Integration Agent</description>
+    <url>https://github.com/sramazzina/elrond</url>
+    <inceptionYear>2021</inceptionYear>
+    <contributors>
+        <contributor>
+            <name>Sergio Ramazzina</name>
+            <email>sergio.ramazzina@serasoft.it</email>
+            <organization>Serasoft S.r.l. - Italy</organization>
+            <organizationUrl>https://www.serasoft.it</organizationUrl>
+        </contributor>
+    </contributors>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.build.timestamp.format>yyyy-MM-dd hh.mm.ss</maven.build.timestamp.format>
+        <junit.version>4.13.1</junit.version>
+        <mockito.all.version>1.10.19</mockito.all.version>
+        <slf4j-api.version>1.7.30</slf4j-api.version>
+        <slf4j-log4j12.version>1.7.30</slf4j-log4j12.version>
+        <jetty.version>9.4.35.v20201120</jetty.version>
+        <jersey-apache-client.version>1.19.1</jersey-apache-client.version>
+        <jersey-bundle.version>1.19.1</jersey-bundle.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.all.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-bundle</artifactId>
+            <version>${jersey-bundle.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+</project>
